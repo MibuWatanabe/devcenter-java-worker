@@ -17,8 +17,8 @@ public class WorkerProcess
             try {
                 Thread.sleep(1000 * 30);
 
-                System.out.println("Insert Contact");
-                insertContact(count);
+                System.out.println("Insert DemoObject__c");
+                insertDemoObject(count);
 
                 Thread.sleep(1000 * 30);
 
@@ -38,7 +38,7 @@ public class WorkerProcess
         return DriverManager.getConnection(dbUrl, username, password);
     }
 
-    private static void insertContact(int count) throws Exception {
+    private static void insertDemoObject(int count) throws Exception {
         Connection connection = null;
         Statement statement = null;
         String sql = null;
@@ -52,7 +52,7 @@ public class WorkerProcess
                 + "( '" + now.format(f) + "', '" + count + "回目の実行です' )"
                 + ";";
 
-            System.out.println("insertContact result : " + statement.executeQuery(sql).toString());
+            System.out.println("insertDemoObject result : " + statement.executeQuery(sql).toString());
         } finally {
             if (statement != null) {
                 statement.close();
