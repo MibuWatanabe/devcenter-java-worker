@@ -48,7 +48,7 @@ public class WorkerProcess
         try {
             connection = getConnection();
             statement = connection.createStatement();
-            sql = "INSERT INTO salesforce1106.DemoObject__c ( ExternalID__c, Comment__c ) VALUES"
+            sql = "INSERT INTO salesforce.DemoObject__c ( ExternalID__c, Comment__c ) VALUES"
                 + "( '" + now.format(f) + "', '" + count + "回目の実行です' )"
                 + ";";
             System.out.println("sql: " + sql);
